@@ -1,47 +1,96 @@
+/* Base reset */
 body {
   font-family: Arial, sans-serif;
   background: #f4f4f9;
   margin: 0;
-  padding: 0;
+  padding-top: 56px; /* para hindi matakpan ng fixed navbar */
   color: #333;
 }
 
+/* Container tweaks */
 .container {
   width: 70%;
   margin: auto;
   padding: 20px;
 }
 
+/* Header / Hero */
 header {
   text-align: center;
   margin-bottom: 40px;
 }
-
 header h1 {
   font-size: 2.5em;
   margin: 0;
 }
-
 header p {
   font-size: 1.2em;
   color: #666;
 }
 
+/* Sections */
 section {
   margin-bottom: 30px;
 }
-
 h2 {
   border-bottom: 2px solid #333;
   padding-bottom: 5px;
   margin-bottom: 15px;
 }
 
+/* Resume items */
 .item {
   margin-bottom: 15px;
 }
-
 ul {
   list-style-type: square;
   padding-left: 20px;
+}
+
+/* Navbar custom */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.navbar-brand {
+  font-weight: bold;
+}
+.navbar-nav .nav-link {
+  margin-left: 10px;
+}
+
+/* Hero section */
+.hero {
+  background: url('banner.jpg') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+.hero h1 {
+  font-size: 3em;
+}
+.hero p {
+  font-size: 1.5em;
+}
+
+/* Cards for skills */
+.card {
+  text-align: center;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: #fff;
+  padding: 15px;
+}
+footer a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
 }
