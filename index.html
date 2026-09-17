@@ -1,193 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Yusney Madlansacay — Portfolio Resume</title>
+  <title>Yusney Madlansacay — Backend Developer</title>
 
-  <!-- Bootstrap CSS -->
+  <!-- Bootstrap utilities -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Your custom CSS (already provided) -->
+  <!-- Custom style -->
   <link rel="stylesheet" href="style.css">
 </head>
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70" tabindex="0">
+<body>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Yusney Madlansacay</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <!-- animated subtle background -->
+  <div class="bg-tech" aria-hidden="true"></div>
 
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
+  <!-- NAV -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-inner container">
+      <a class="brand" href="#top">Yusney Madlansacay</a>
+
+      <div class="nav-links" role="menubar" aria-label="Primary">
+        <a href="#about" role="menuitem">About</a>
+        <a href="#skills" role="menuitem">Skills</a>
+        <a href="#experience" role="menuitem">Experience</a>
+        <a href="#projects" role="menuitem">Projects</a>
+        <a href="#contact" role="menuitem">Contact</a>
+        <a href="#legal" role="menuitem">Legal</a>
       </div>
+
+      <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleMobileMenu(this)">☰</button>
     </div>
   </nav>
 
-  <!-- Hero (no profile image as requested) -->
-  <header class="hero text-white text-center d-flex align-items-center">
-    <div class="container">
-      <div class="display-6 text-muted mb-2">Backend Developer</div>
-      <h1 class="fw-bold mb-1">Yusney Madlansacay</h1>
-      <p class="lead mb-3">MS SQL · Java · Go · Automation & Migration Specialist</p>
-      <a href="#contact" class="btn btn-outline-light btn-lg mt-2">Get in Touch</a>
+  <!-- HERO -->
+  <header id="top" class="hero" role="banner">
+    <div class="inner container">
+      <div class="eyebrow">Backend Developer · Automation & Migration</div>
+      <h1>Yusney Madlansacay</h1>
+      <p class="lead">MS SQL · Java · Go · Python · PowerShell — I build reliable backend systems, automation tools, and migration utilities for enterprise environments.</p>
+
+      <div class="hero-card" role="region" aria-label="Quick info">
+        <div class="chip">Location</div>
+        <div class="chip"><strong>San Pablo, Philippines</strong></div>
+        <div style="width:12px"></div>
+        <div class="chip">Open to: Backend roles · Contract work</div>
+      </div>
+
+      <div style="margin-top:18px" class="cta">
+        <a class="btn btn-outline" href="#contact">Get in touch</a>
+        <a class="btn" href="#projects" style="margin-left:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#07101a">See projects</a>
+      </div>
     </div>
   </header>
 
-  <!-- About -->
-  <section id="about" class="py-5 bg-dark text-white">
-    <div class="container">
-      <h2 class="mb-4">About Me</h2>
-      <p class="fs-5">
-        I am a backend developer with strong experience in MS SQL, Java, and Go. I also have practical
-        experience with Python and PowerShell scripting, and I have built Copilot Studio agents.
-        I have contributed to microfinance systems using Java and MS SQL and developed automation tools
-        and migration utilities for enterprise environments. I focus on delivering reliable, efficient
-        solutions that improve operational workflows and support large‑scale deployments.
-      </p>
+  <!-- ABOUT -->
+  <section id="about" class="container">
+    <span class="section-title">About Me</span>
+    <p class="section-sub">I am a backend developer with strong experience in MS SQL, Java, and Go. I also have practical experience with Python and PowerShell scripting, and I have built Copilot Studio agents. I have contributed to microfinance systems using Java and MS SQL and developed automation tools and migration utilities for enterprise environments. I focus on delivering reliable, efficient solutions that improve operational workflows and support large‑scale deployments.</p>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="container">
+    <span class="section-title">Skills</span>
+    <p class="section-sub">Tools, languages and platforms I use regularly — organized for quick scanning.</p>
+
+    <div class="grid" aria-hidden="false">
+      <div class="card skill">Docker</div>
+      <div class="card skill">Copilot Studio</div>
+      <div class="card skill">Gitbash · GitHub · Azure</div>
+      <div class="card skill">Spring Tool Suite</div>
+      <div class="card skill">Visual Studio Code</div>
+      <div class="card skill">Asana</div>
+      <div class="card skill">MS SQL · PostgreSQL</div>
+      <div class="card skill">Jira · Trello</div>
+      <div class="card skill">ServiceNow</div>
+      <div class="card skill">PowerShell Scripting</div>
+      <div class="card skill">Python</div>
+      <div class="card skill">Java</div>
+      <div class="card skill">Go</div>
     </div>
   </section>
 
-  <!-- Skills -->
-  <section id="skills" class="py-5 bg-black text-white">
-    <div class="container">
-      <h2 class="mb-4">Skills</h2>
+  <!-- EXPERIENCE -->
+  <section id="experience" class="container">
+    <span class="section-title">Experience</span>
+    <p class="section-sub">Selected roles and engagements where I delivered automation, migration, and backend services.</p>
+
+    <div class="timeline">
+      <div class="timeline-item card" aria-label="We Serv Systems International Inc.">
+        <div class="dot" aria-hidden="true"></div>
+        <div class="content">
+          <h6>Backend Developer</h6>
+          <div class="role">We Serv Systems International Inc. (Fujitsu)</div>
+          <p>Worked on automation, migration, and tooling projects including PowerShell and Python utilities for VM reporting, migrations, and secure data transfers.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item card" aria-label="Bank of the Philippine Islands">
+        <div class="dot" aria-hidden="true"></div>
+        <div class="content">
+          <h6>Software Engineer</h6>
+          <div class="role">Bank of the Philippine Islands (Nityo Infotech)</div>
+          <p>Enhanced parsing and decryption tools in Java using regex patterns and supported secure data processing workflows.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item card" aria-label="Card MRI">
+        <div class="dot" aria-hidden="true"></div>
+        <div class="content">
+          <h6>Backend Developer / Microservices</h6>
+          <div class="role">Card MRI Information Technology, Inc.</div>
+          <p>Modified backend APIs, performed real‑time testing, assisted in deployments, and supported financial microservices for loan origination integrated with CORE MFS.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="container">
+    <span class="section-title">Projects</span>
+    <p class="section-sub">Selected projects (confidential where noted). Each entry highlights the company, languages, and a concise summary.</p>
+
+    <div class="project-list">
+      <div class="project-row card">
+        <figure aria-hidden="true" class="mono">PS</figure>
+        <div class="info">
+          <h5>Server Mapping Tool</h5>
+          <div class="meta">We Serv Systems International Inc. (Fujitsu) — Confidential · PowerShell, Python</div>
+          <p>Collected VM uptime/downtime via PowerShell; merged CSV outputs with Python using timeline rules to produce consolidated reports for analysis.</p>
+          <div style="margin-top:8px"><span class="badge-tech">PowerShell</span><span class="badge-tech">Python</span></div>
+        </div>
+      </div>
+
+      <div class="project-row card">
+        <figure aria-hidden="true" class="mono">VBA</figure>
+        <div class="info">
+          <h5>VM Price Mapping Tool</h5>
+          <div class="meta">We Serv Systems International Inc. (Fujitsu) — Confidential · VBA</div>
+          <p>Excel VBA utility to calculate Azure VM monthly costs and produce cost breakdowns for reporting and budgeting.</p>
+          <div style="margin-top:8px"><span class="badge-tech">VBA</span><span class="badge-tech">Excel</span></div>
+        </div>
+      </div>
+
+      <div class="project-row card">
+        <figure aria-hidden="true" class="mono">PS</figure>
+        <div class="info">
+          <h5>SPO — Linux (Ubuntu) Migration</h5>
+          <div class="meta">We Serv Systems International Inc. (Fujitsu) — Confidential · PowerShell</div>
+          <p>PowerShell tool to migrate files to Ubuntu servers using SSH and rsync, automating large-scale file transfers and preserving metadata.</p>
+          <div style="margin-top:8px"><span class="badge-tech">SSH</span><span class="badge-tech">rsync</span></div>
+        </div>
+      </div>
+
+      <div class="project-row card">
+        <figure aria-hidden="true" class="mono">PS</figure>
+        <div class="info">
+          <h5>2nd DP Migration / Encryption</h5>
+          <div class="meta">We Serv Systems International Inc. (Fujitsu) — Confidential · PowerShell</div>
+          <p>Used internal encryption tools and PowerShell scripts to securely encrypt and transfer large datasets to client VMs.</p>
+          <div style="margin-top:8px"><span class="badge-tech">Encryption</span><span class="badge-tech">PowerShell</span></div>
+        </div>
+      </div>
+
+      <div class="project-row card">
+        <figure aria-hidden="true" class="mono">Setup</figure>
+        <div class="info">
+          <h5>1st DP Migration / Encryption</h5>
+          <div class="meta">We Serv Systems International Inc. (Fujitsu) — Confidential</div>
+          <p>Prepared and configured client VMs for Japanese clients, ensuring environment readiness and compliance with deployment standards.</p>
+        </div>
+      </div>
+
+      <div class="project-row card">
+        <figure aria-hidden="true" class="mono">Java</figure>
+        <div class="info">
+          <h5>IPKnowledge</h5>
+          <div class="meta">We Serv Systems International Inc. (Fujitsu) — Confidential · Java, COBOL</div>
+          <p>Modified existing tools and completed test cases for a Japan-specific web application, improving functionality and reliability.</p>
+        </div>
+      </div>
+
+      <div class="project-row card">
+        <figure aria-hidden="true" class="mono">Java</figure>
+        <div class="info">
+          <h5>Parser</h5>
+          <div class="meta">Bank of the Philippine Islands (Nityo Infotech) — Confidential · Java</div>
+          <p>Enhanced a parsing/decryption tool using regex patterns to handle secure data extraction and transformation.</p>
+        </div>
+      </div>
+
+      <div class="project-row card">
+        <figure aria-hidden="true" class="mono">Java</figure>
+        <div class="info">
+          <h5>Loan Origination System</h5>
+          <div class="meta">Card MRI Information Technology, Inc. · Java, MS SQL, PostgreSQL</div>
+          <p>Modified backend APIs, performed real-time testing, assisted in deployments, and supported financial microservices integrated with CORE MFS.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="container">
+    <span class="section-title">Contact</span>
+    <p class="section-sub">Available for backend roles, automation, and migration projects. Quick contact details and a simple form below.</p>
+
+    <div class="form-card card">
       <div class="row g-3">
-        <div class="col-sm-6 col-md-3"><div class="card p-3">Docker</div></div>
-        <div class="col-sm-6 col-md-3"><div class="card p-3">Copilot Studio</div></div>
-        <div class="col-sm-6 col-md-3"><div class="card p-3">Gitbash / GitHub / Azure</div></div>
-        <div class="col-sm-6 col-md-3"><div class="card p-3">Spring Tool Suite</div></div>
+        <div class="col-md-6">
+          <p class="kv">Phone</p>
+          <p>09997000894</p>
 
-        <div class="col-sm-6 col-md-3"><div class="card p-3">Visual Studio Code</div></div>
-        <div class="col-sm-6 col-md-3"><div class="card p-3">Asana</div></div>
-        <div class="col-sm-6 col-md-3"><div class="card p-3">MS SQL / PostgreSQL</div></div>
-        <div class="col-sm-6 col-md-3"><div class="card p-3">Jira / Trello</div></div>
+          <p class="kv">Email</p>
+          <p><a href="mailto:yusney12madlansacay@gmail.com" class="mono">yusney12madlansacay@gmail.com</a></p>
 
-        <div class="col-sm-6 col-md-3"><div class="card p-3">ServiceNow</div></div>
-        <div class="col-sm-6 col-md-3"><div class="card p-3">PowerShell Scripting</div></div>
-        <div class="col-sm-6 col-md-3"><div class="card p-3">Python</div></div>
-        <div class="col-sm-6 col-md-3"><div class="card p-3">Java</div></div>
+          <p style="margin-top:12px;color:var(--muted)">Prefer direct contact — call or email anytime.</p>
+        </div>
 
-        <div class="col-sm-6 col-md-3"><div class="card p-3">Go</div></div>
+        <div class="col-md-6">
+          <form method="POST" action="https://script.google.com/macros/s/AKfycbxXnXVlCixiL89xlFlqgGmp3mQnQpR48x6CiZfHtw/exec" aria-label="Contact form">
+            <label for="name">Name</label>
+            <input id="name" name="name" class="form-control" required>
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" class="form-control" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" class="form-control" required></textarea>
+
+            <div style="margin-top:10px;">
+              <button class="btn btn-outline" type="submit">Send Message</button>
+              <a class="btn" href="mailto:yusney12madlansacay@gmail.com" style="margin-left:8px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#07101a">Email</a>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects" class="py-5 bg-dark text-white">
-    <div class="container">
-      <h2 class="mb-4">Projects</h2>
+  <!-- LEGAL -->
+  <section id="legal" class="container">
+    <span class="section-title">Legal & Privacy</span>
+    <p class="section-sub">Contents of this site are © Copyright 2020–<span id="year-legal"></span> Yusney Madlansacay. All rights reserved.</p>
 
-      <article class="card bg-black text-white shadow-sm mb-3">
-        <div class="card-body">
-          <h5 class="card-title">Server Mapping Tool</h5>
-          <h6 class="card-subtitle mb-2 text-muted">We Serv Systems International Inc. (Fujitsu) — Confidential</h6>
-          <p class="mb-1"><strong>Languages:</strong> PowerShell, Python</p>
-          <p class="mb-0">Developed a tool to collect VM uptime and downtime via PowerShell. A Python utility merges the two CSV outputs using a defined timeline to produce consolidated reports for analysis.</p>
-        </div>
-      </article>
-
-      <article class="card bg-black text-white shadow-sm mb-3">
-        <div class="card-body">
-          <h5 class="card-title">VM Price Mapping Tool</h5>
-          <h6 class="card-subtitle mb-2 text-muted">We Serv Systems International Inc. (Fujitsu) — Confidential</h6>
-          <p class="mb-1"><strong>Language:</strong> VBA</p>
-          <p class="mb-0">Built an Excel VBA utility to calculate monthly Azure VM costs and produce cost breakdowns for reporting.</p>
-        </div>
-      </article>
-
-      <article class="card bg-black text-white shadow-sm mb-3">
-        <div class="card-body">
-          <h5 class="card-title">SPO — Linux (Ubuntu) Migration</h5>
-          <h6 class="card-subtitle mb-2 text-muted">We Serv Systems International Inc. (Fujitsu) — Confidential</h6>
-          <p class="mb-1"><strong>Language:</strong> PowerShell</p>
-          <p class="mb-0">Created a PowerShell-based migration tool that transfers files to Ubuntu servers using SSH and rsync, automating large-scale file migrations.</p>
-        </div>
-      </article>
-
-      <article class="card bg-black text-white shadow-sm mb-3">
-        <div class="card-body">
-          <h5 class="card-title">2nd DP Migration / Encryption</h5>
-          <h6 class="card-subtitle mb-2 text-muted">We Serv Systems International Inc. (Fujitsu) — Confidential</h6>
-          <p class="mb-1"><strong>Language:</strong> PowerShell</p>
-          <p class="mb-0">Used internal encryption tools and PowerShell scripts to securely encrypt and transfer large datasets to client VMs.</p>
-        </div>
-      </article>
-
-      <article class="card bg-black text-white shadow-sm mb-3">
-        <div class="card-body">
-          <h5 class="card-title">1st DP Migration / Encryption</h5>
-          <h6 class="card-subtitle mb-2 text-muted">We Serv Systems International Inc. (Fujitsu) — Confidential</h6>
-          <p class="mb-0">Prepared and configured client VMs for use by Japanese clients, ensuring environment readiness and compliance with deployment standards.</p>
-        </div>
-      </article>
-
-      <article class="card bg-black text-white shadow-sm mb-3">
-        <div class="card-body">
-          <h5 class="card-title">IPKnowledge</h5>
-          <h6 class="card-subtitle mb-2 text-muted">We Serv Systems International Inc. (Fujitsu) — Confidential</h6>
-          <p class="mb-1"><strong>Languages:</strong> Java, COBOL</p>
-          <p class="mb-0">Modified existing tools and completed test cases for a Japan-specific web application, improving functionality and reliability.</p>
-        </div>
-      </article>
-
-      <article class="card bg-black text-white shadow-sm mb-3">
-        <div class="card-body">
-          <h5 class="card-title">Parser</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Bank of the Philippine Islands (Nityo Infotech) — Confidential</h6>
-          <p class="mb-1"><strong>Language:</strong> Java</p>
-          <p class="mb-0">Enhanced a parsing/decryption tool using regex patterns to handle secure data extraction and transformation.</p>
-        </div>
-      </article>
-
-      <article class="card bg-black text-white shadow-sm mb-3">
-        <div class="card-body">
-          <h5 class="card-title">Loan Origination System</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card MRI Information Technology, Inc.</h6>
-          <p class="mb-1"><strong>Languages:</strong> Java, MS SQL, PostgreSQL</p>
-          <p class="mb-0">Modified backend APIs, performed real-time testing, assisted in deployments, and supported financial microservices for client loan processing integrated with CORE MFS.</p>
-        </div>
-      </article>
-
+    <div class="privacy-policy card">
+      <h5>Privacy Policy</h5>
+      <p class="legal-des">This privacy policy governs your access to and use of this website. I collect information you provide via forms and use analytics to gather non‑personal usage data to improve the site. Cookies and third‑party services may be used; contact providers directly for details. I retain data until you request deletion or I determine retention is no longer justified.</p>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="py-5 bg-black text-center text-white">
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
     <div class="container">
-      <h2 class="mb-4">Contact</h2>
-      <p class="fs-5 mb-1"><strong>Phone:</strong> 09997000894</p>
-      <p class="fs-5 mb-1"><strong>Email:</strong> <a href="mailto:yusney12madlansacay@gmail.com" class="text-info">yusney12madlansacay@gmail.com</a></p>
-      <p class="fs-6 text-muted mb-3">Available for backend roles, automation, and migration projects.</p>
-
-      <div class="mt-3">
-        <a href="mailto:yusney12madlansacay@gmail.com" class="btn btn-outline-light me-2">Email</a>
-        <a href="https://github.com/Eastnake" class="btn btn-outline-secondary" target="_blank" rel="noopener">GitHub</a>
+      <div class="socials" aria-label="Social links">
+        <a href="mailto:yusney12madlansacay@gmail.com" aria-label="Email">✉️</a>
+        <a href="https://github.com/Eastnake" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a>
       </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3">
-    <div class="container">
-      <small>&copy; <span id="year"></span> Yusney Madlansacay — Backend Developer</small>
+      <div class="kv">Made with ♥ by Yusney Madlansacay</div>
+      <div style="margin-top:8px;color:var(--muted);font-size:0.9rem;">&copy; <span id="year"></span></div>
     </div>
   </footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Small script to set current year -->
+  <!-- Small scripts -->
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // set years
+    const y = new Date().getFullYear();
+    document.getElementById('year').textContent = y;
+    const el = document.getElementById('year-legal');
+    if (el) el.textContent = y;
+
+    // mobile menu toggle (simple)
+    function toggleMobileMenu(btn){
+      const nav = document.querySelector('.nav-links');
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      if(nav.style.display === 'flex'){ nav.style.display = 'none'; } else { nav.style.display = 'flex'; nav.style.flexDirection = 'column'; nav.style.position = 'absolute'; nav.style.right = '18px'; nav.style.top = '64px'; nav.style.background = 'rgba(15,17,20,0.9)'; nav.style.padding = '12px'; nav.style.borderRadius = '10px'; }
+    }
+
+    // simple active link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const links = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY + 120;
+      sections.forEach(sec => {
+        if(sec.offsetTop <= y && sec.offsetTop + sec.offsetHeight > y){
+          links.forEach(l => l.classList.remove('active'));
+          const a = document.querySelector('.nav-links a[href="#' + sec.id + '"]');
+          if(a) a.classList.add('active');
+        }
+      });
+    });
   </script>
+
+  <!-- Bootstrap JS (optional) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

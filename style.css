@@ -1,103 +1,325 @@
-/* Base reset */
+/* ==========================================================================
+   style.css — Techy dark resume theme for Yusney Madlansacay
+   - Fonts: Poppins + JetBrains Mono for codey accents
+   - Neon accent, animated background, lively hover states
+   - Place this file at the project root and link from index.html
+   ========================================================================== */
+
+/* ---------- Imports ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+/* ---------- Root variables ---------- */
+:root{
+  --bg-1: #06070a;
+  --bg-2: #0f1114;
+  --panel: #0f1720;
+  --muted: #9aa3ad;
+  --accent: #00d1ff;
+  --accent-2: #7c5cff;
+  --glass: rgba(255,255,255,0.03);
+  --card-shadow: 0 12px 36px rgba(2,6,23,0.72);
+  --radius: 14px;
+  --max-width: 1200px;
+  --mono: 'JetBrains Mono', monospace;
+  --ui-gap: 18px;
+  --text: #e6eef6;
+  --muted-contrast: rgba(255,255,255,0.55);
+}
+
+/* ---------- Reset & base ---------- */
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; padding: 0; }
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: #121212; /* dark background */
-  margin: 0;
-  padding-top: 56px; /* para hindi matakpan ng fixed navbar */
-  color: #eaeaea; /* light text for contrast */
+  font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, var(--bg-1), var(--bg-2));
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.45;
+  overflow-x: hidden;
 }
 
-/* Navbar */
+/* ---------- Layout container ---------- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 22px;
+}
+
+/* ---------- Subtle animated tech background ---------- */
+.bg-tech {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.12;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(0,209,255,0.06) 0 2px, transparent 3px),
+    radial-gradient(circle at 80% 80%, rgba(124,92,255,0.05) 0 2px, transparent 3px),
+    linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+  background-size: 1200px 800px, 1000px 700px, 100% 100%;
+  animation: drift 18s linear infinite;
+}
+@keyframes drift {
+  from { background-position: 0 0, 0 0, 0 0; }
+  to   { background-position: -200px 100px, 200px -100px, 0 0; }
+}
+
+/* ---------- Navbar ---------- */
 .navbar {
-  background: #000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.6);
+  position: fixed;
+  top: 18px;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  display: flex;
+  justify-content: center;
+  pointer-events: auto;
 }
-.navbar-brand {
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-.navbar-nav .nav-link {
-  margin-left: 15px;
-  transition: color 0.3s;
-}
-.navbar-nav .nav-link:hover {
-  color: #0d6efd; /* accent blue */
-}
-
-/* Hero section */
-.hero {
-  background: url('banner.jpg') no-repeat center center/cover;
-  min-height: 70vh;
+.navbar-inner {
   display: flex;
   align-items: center;
-  text-align: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--max-width);
+  padding: 8px 18px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 20px rgba(2,6,23,0.6);
 }
+.brand {
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.05rem;
+  letter-spacing: 0.4px;
+}
+.nav-links {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all .18s ease;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: #fff;
+  background: linear-gradient(90deg, rgba(0,209,255,0.06), rgba(124,92,255,0.04));
+  box-shadow: inset 0 -2px 0 var(--accent);
+}
+
+/* Mobile menu toggle */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 8px;
+  border-radius: 10px;
+  color: var(--muted);
+}
+@media (max-width: 880px) {
+  .nav-links { display: none; }
+  .menu-toggle { display: block; }
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 90px;
+  padding-bottom: 40px;
+  position: relative;
+  z-index: 2;
+}
+.hero .inner { max-width: 980px; }
+.eyebrow { color: var(--muted); font-weight: 700; letter-spacing: 0.6px; margin-bottom: 10px; }
 .hero h1 {
-  font-size: 3em;
+  font-size: 2.8rem;
+  margin: 6px 0 8px;
+  line-height: 1.02;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hero p.lead { color: var(--muted); font-size: 1.05rem; margin-bottom: 18px; }
+
+/* Hero quick info card */
+.hero-card {
+  margin-top: 22px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+}
+.hero-card .chip {
+  background: rgba(255,255,255,0.02);
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: var(--muted);
   font-weight: 700;
 }
-.hero p {
-  font-size: 1.3em;
-  margin-bottom: 20px;
-}
-.hero img {
-  border: 4px solid #fff;
-}
+.hero-card .chip strong { color: var(--accent); }
 
-/* Sections */
-section {
-  margin-bottom: 50px;
-}
-h2 {
-  font-weight: 600;
-  margin-bottom: 25px;
-  position: relative;
+/* CTA buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: transparent;
   color: #fff;
-}
-h2::after {
-  content: '';
-  display: block;
-  width: 50px;
-  height: 3px;
-  background: #0d6efd;
-  margin-top: 8px;
-}
-
-/* Cards */
-.card {
-  border-radius: 8px;
-  background: #1e1e1e;
-  color: #eaeaea;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.6);
-}
-.card h5 {
-  color: #0d6efd;
-}
-.card p {
-  color: #ccc;
-}
-
-/* Contact buttons */
-.btn-outline-light:hover {
-  background: #0d6efd;
-  border-color: #0d6efd;
-}
-
-/* Footer */
-footer {
-  background: #000;
-  color: #aaa;
-  padding: 20px;
-}
-footer a {
-  color: #0d6efd;
-  margin: 0 10px;
   text-decoration: none;
+  font-weight: 700;
+  transition: transform .18s ease, box-shadow .18s ease;
 }
-footer a:hover {
-  color: #fff;
+.btn:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(2,6,23,0.6); }
+.btn-outline { border-color: var(--accent); color: var(--accent); }
+.btn-outline:hover { background: var(--accent); color: #07101a; }
+
+/* ---------- Sections ---------- */
+section { padding: 72px 0; position: relative; z-index: 2; }
+.section-title { display: block; font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; color: #fff; }
+.section-sub { color: var(--muted); margin-bottom: 22px; }
+
+/* ---------- Grid & cards ---------- */
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 992px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid rgba(255,255,255,0.02);
+  transition: transform .22s ease, box-shadow .22s ease;
 }
+.card:hover { transform: translateY(-10px); box-shadow: 0 26px 60px rgba(2,6,23,0.75); }
+.card h5 { margin: 0 0 8px; color: #fff; font-size: 1.05rem; }
+.card .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 10px; }
+.card p { color: var(--muted); margin: 0; font-size: 0.95rem; line-height: 1.45; }
+
+/* ---------- Skill tiles ---------- */
+.skill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+  font-weight: 700;
+  color: #eaf6ff;
+  position: relative;
+  overflow: hidden;
+}
+.skill:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-mask: linear-gradient(#000,#000) content-box, linear-gradient(#000,#000);
+  mask: linear-gradient(#000,#000) content-box, linear-gradient(#000,#000);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+.skill:hover:before { opacity: 1; }
+
+/* ---------- Timeline / Experience ---------- */
+.timeline { display: flex; flex-direction: column; gap: 14px; }
+.timeline-item { display: flex; gap: 14px; align-items: flex-start; }
+.timeline-item .dot {
+  width: 12px; height: 12px; border-radius: 50%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  margin-top: 6px; flex: 0 0 12px;
+}
+.timeline-item .content { flex: 1; }
+.timeline-item h6 { margin: 0 0 6px; font-size: 1rem; color: #fff; }
+.timeline-item .role { color: var(--muted); font-size: 0.95rem; margin-bottom: 6px; }
+
+/* ---------- Projects list ---------- */
+.project-list { display: flex; flex-direction: column; gap: 12px; }
+.project-row { display: flex; gap: 12px; align-items: flex-start; }
+.project-row figure {
+  width: 84px; height: 64px; border-radius: 10px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  display: flex; align-items: center; justify-content: center; color: var(--muted);
+  font-weight: 700; flex: 0 0 84px;
+}
+.project-row .info { flex: 1; }
+.badge-tech {
+  display: inline-block; padding: 6px 10px; border-radius: 999px;
+  background: rgba(255,255,255,0.03); color: var(--muted); font-weight: 700; margin-right: 8px;
+  font-size: 0.82rem;
+}
+
+/* ---------- Contact form styles (ensures readability) ---------- */
+.form-card { padding: 18px; border-radius: 12px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); box-shadow: var(--card-shadow); }
+.form-control {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.04);
+  background: rgba(255,255,255,0.02);
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+.form label { color: #ffffff; font-weight: 600; font-size: 0.95rem; }
+
+/* Placeholder color */
+.form-control::placeholder { color: rgba(255,255,255,0.45); }
+
+/* Focus state */
+.form-control:focus { box-shadow: 0 6px 20px rgba(0,209,255,0.08); border-color: var(--accent); outline: none; }
+
+/* ---------- Footer ---------- */
+.footer {
+  padding: 28px 0;
+  border-top: 1px solid rgba(255,255,255,0.03);
+  margin-top: 30px;
+  color: var(--muted);
+  text-align: center;
+}
+.socials { display: flex; gap: 12px; justify-content: center; margin-bottom: 10px; }
+.socials a { color: var(--muted); text-decoration: none; font-size: 1.15rem; }
+.socials a:hover { color: var(--accent); }
+
+/* ---------- Small helpers ---------- */
+.kv { color: var(--muted); font-weight: 700; }
+.mono { font-family: var(--mono); font-weight: 600; color: var(--accent); }
+
+/* Accessibility focus */
+a:focus, button:focus, input:focus, textarea:focus { outline: 3px solid rgba(0,209,255,0.12); outline-offset: 2px; }
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 880px) {
+  .hero h1 { font-size: 2rem; }
+  .grid { grid-template-columns: 1fr; }
+  .hero-card { flex-direction: column; gap: 8px; align-items: center; }
+  .navbar-inner { padding: 10px; }
+  .project-row { flex-direction: column; align-items: stretch; }
+  .project-row figure { width: 100%; height: 140px; flex: none; border-radius: 10px; }
+}
+
+/* ---------- Optional micro-animations ---------- */
+.fade-in { animation: fadeIn .6s ease both; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ---------- End of file ---------- */
