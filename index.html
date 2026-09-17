@@ -1,94 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Resume</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Yusney Madlansacay — Portfolio Resume</title>
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Your custom CSS (already provided) -->
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70" tabindex="0">
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">My Resume</a>
+      <a class="navbar-brand fw-bold" href="#">Yusney Madlansacay</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <header class="bg-primary text-white text-center py-5">
+  <!-- Hero (no profile image as requested) -->
+  <header class="hero text-white text-center d-flex align-items-center">
     <div class="container">
-      <img src="profile.jpg" class="rounded-circle mb-3" width="120" height="120" alt="Profile">
-      <h1 class="fw-bold">Your Name</h1>
-      <p class="lead">Software Developer | San Pablo City</p>
+      <div class="display-6 text-muted mb-2">Backend Developer</div>
+      <h1 class="fw-bold mb-1">Yusney Madlansacay</h1>
+      <p class="lead mb-3">MS SQL · Java · Go · Automation & Migration Specialist</p>
+      <a href="#contact" class="btn btn-outline-light btn-lg mt-2">Get in Touch</a>
     </div>
   </header>
 
   <!-- About -->
-  <section id="about" class="py-5">
+  <section id="about" class="py-5 bg-dark text-white">
     <div class="container">
       <h2 class="mb-4">About Me</h2>
-      <p>Short introduction about yourself, your career goals, and interests.</p>
-    </div>
-  </section>
-
-  <!-- Experience -->
-  <section id="experience" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="mb-4">Experience</h2>
-      <div class="card mb-3">
-        <div class="card-body">
-          <h5 class="card-title">Backend Developer</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Go & PostgreSQL | 2026</h6>
-          <ul>
-            <li>Developed authentication and user CRUD handlers</li>
-            <li>Debugged JWT revocation and expiration</li>
-          </ul>
-        </div>
-      </div>
+      <p class="fs-5">
+        I am a backend developer with strong experience in MS SQL, Java, and Go. I also have practical
+        experience with Python and PowerShell scripting, and I have built Copilot Studio agents.
+        I have contributed to microfinance systems using Java and MS SQL and developed automation tools
+        and migration utilities for enterprise environments. I focus on delivering reliable, efficient
+        solutions that improve operational workflows and support large‑scale deployments.
+      </p>
     </div>
   </section>
 
   <!-- Skills -->
-  <section id="skills" class="py-5">
+  <section id="skills" class="py-5 bg-black text-white">
     <div class="container">
       <h2 class="mb-4">Skills</h2>
-      <div class="row">
-        <div class="col-md-3"><div class="card p-3">Go Programming</div></div>
-        <div class="col-md-3"><div class="card p-3">PostgreSQL</div></div>
-        <div class="col-md-3"><div class="card p-3">Docker</div></div>
-        <div class="col-md-3"><div class="card p-3">Git Workflow</div></div>
+      <div class="row g-3">
+        <div class="col-sm-6 col-md-3"><div class="card p-3">Docker</div></div>
+        <div class="col-sm-6 col-md-3"><div class="card p-3">Copilot Studio</div></div>
+        <div class="col-sm-6 col-md-3"><div class="card p-3">Gitbash / GitHub / Azure</div></div>
+        <div class="col-sm-6 col-md-3"><div class="card p-3">Spring Tool Suite</div></div>
+
+        <div class="col-sm-6 col-md-3"><div class="card p-3">Visual Studio Code</div></div>
+        <div class="col-sm-6 col-md-3"><div class="card p-3">Asana</div></div>
+        <div class="col-sm-6 col-md-3"><div class="card p-3">MS SQL / PostgreSQL</div></div>
+        <div class="col-sm-6 col-md-3"><div class="card p-3">Jira / Trello</div></div>
+
+        <div class="col-sm-6 col-md-3"><div class="card p-3">ServiceNow</div></div>
+        <div class="col-sm-6 col-md-3"><div class="card p-3">PowerShell Scripting</div></div>
+        <div class="col-sm-6 col-md-3"><div class="card p-3">Python</div></div>
+        <div class="col-sm-6 col-md-3"><div class="card p-3">Java</div></div>
+
+        <div class="col-sm-6 col-md-3"><div class="card p-3">Go</div></div>
       </div>
     </div>
   </section>
 
+  <!-- Projects -->
+  <section id="projects" class="py-5 bg-dark text-white">
+    <div class="container">
+      <h2 class="mb-4">Projects</h2>
+
+      <article class="card bg-black text-white shadow-sm mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Server Mapping Tool</h5>
+          <h6 class="card-subtitle mb-2 text-muted">We Serv Systems International Inc. (Fujitsu) — Confidential</h6>
+          <p class="mb-1"><strong>Languages:</strong> PowerShell, Python</p>
+          <p class="mb-0">Developed a tool to collect VM uptime and downtime via PowerShell. A Python utility merges the two CSV outputs using a defined timeline to produce consolidated reports for analysis.</p>
+        </div>
+      </article>
+
+      <article class="card bg-black text-white shadow-sm mb-3">
+        <div class="card-body">
+          <h5 class="card-title">VM Price Mapping Tool</h5>
+          <h6 class="card-subtitle mb-2 text-muted">We Serv Systems International Inc. (Fujitsu) — Confidential</h6>
+          <p class="mb-1"><strong>Language:</strong> VBA</p>
+          <p class="mb-0">Built an Excel VBA utility to calculate monthly Azure VM costs and produce cost breakdowns for reporting.</p>
+        </div>
+      </article>
+
+      <article class="card bg-black text-white shadow-sm mb-3">
+        <div class="card-body">
+          <h5 class="card-title">SPO — Linux (Ubuntu) Migration</h5>
+          <h6 class="card-subtitle mb-2 text-muted">We Serv Systems International Inc. (Fujitsu) — Confidential</h6>
+          <p class="mb-1"><strong>Language:</strong> PowerShell</p>
+          <p class="mb-0">Created a PowerShell-based migration tool that transfers files to Ubuntu servers using SSH and rsync, automating large-scale file migrations.</p>
+        </div>
+      </article>
+
+      <article class="card bg-black text-white shadow-sm mb-3">
+        <div class="card-body">
+          <h5 class="card-title">2nd DP Migration / Encryption</h5>
+          <h6 class="card-subtitle mb-2 text-muted">We Serv Systems International Inc. (Fujitsu) — Confidential</h6>
+          <p class="mb-1"><strong>Language:</strong> PowerShell</p>
+          <p class="mb-0">Used internal encryption tools and PowerShell scripts to securely encrypt and transfer large datasets to client VMs.</p>
+        </div>
+      </article>
+
+      <article class="card bg-black text-white shadow-sm mb-3">
+        <div class="card-body">
+          <h5 class="card-title">1st DP Migration / Encryption</h5>
+          <h6 class="card-subtitle mb-2 text-muted">We Serv Systems International Inc. (Fujitsu) — Confidential</h6>
+          <p class="mb-0">Prepared and configured client VMs for use by Japanese clients, ensuring environment readiness and compliance with deployment standards.</p>
+        </div>
+      </article>
+
+      <article class="card bg-black text-white shadow-sm mb-3">
+        <div class="card-body">
+          <h5 class="card-title">IPKnowledge</h5>
+          <h6 class="card-subtitle mb-2 text-muted">We Serv Systems International Inc. (Fujitsu) — Confidential</h6>
+          <p class="mb-1"><strong>Languages:</strong> Java, COBOL</p>
+          <p class="mb-0">Modified existing tools and completed test cases for a Japan-specific web application, improving functionality and reliability.</p>
+        </div>
+      </article>
+
+      <article class="card bg-black text-white shadow-sm mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Parser</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Bank of the Philippine Islands (Nityo Infotech) — Confidential</h6>
+          <p class="mb-1"><strong>Language:</strong> Java</p>
+          <p class="mb-0">Enhanced a parsing/decryption tool using regex patterns to handle secure data extraction and transformation.</p>
+        </div>
+      </article>
+
+      <article class="card bg-black text-white shadow-sm mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Loan Origination System</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Card MRI Information Technology, Inc.</h6>
+          <p class="mb-1"><strong>Languages:</strong> Java, MS SQL, PostgreSQL</p>
+          <p class="mb-0">Modified backend APIs, performed real-time testing, assisted in deployments, and supported financial microservices for client loan processing integrated with CORE MFS.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
   <!-- Contact -->
-  <section id="contact" class="py-5 bg-light">
+  <section id="contact" class="py-5 bg-black text-center text-white">
     <div class="container">
       <h2 class="mb-4">Contact</h2>
-      <p>Email: yourname@email.com</p>
-      <p>GitHub: <a href="https://github.com/Eastnake">github.com/Eastnake</a></p>
+      <p class="fs-5 mb-1"><strong>Phone:</strong> 09997000894</p>
+      <p class="fs-5 mb-1"><strong>Email:</strong> <a href="mailto:yusney12madlansacay@gmail.com" class="text-info">yusney12madlansacay@gmail.com</a></p>
+      <p class="fs-6 text-muted mb-3">Available for backend roles, automation, and migration projects.</p>
+
+      <div class="mt-3">
+        <a href="mailto:yusney12madlansacay@gmail.com" class="btn btn-outline-light me-2">Email</a>
+        <a href="https://github.com/Eastnake" class="btn btn-outline-secondary" target="_blank" rel="noopener">GitHub</a>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="bg-dark text-white text-center py-3">
-    <p>&copy; 2026 Your Name</p>
+    <div class="container">
+      <small>&copy; <span id="year"></span> Yusney Madlansacay — Backend Developer</small>
+    </div>
   </footer>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Small script to set current year -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
